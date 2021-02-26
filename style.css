@@ -2,7 +2,11 @@
 	margin-top: 5%;
 }
 
-.btn-heading1{
-	padding: 2%;
-	font-size: 20px;
+
+
+.sub-heading1{
+	margin-top: 20px;
+}
+.sub-HeadingData{
+	color: red;
 }

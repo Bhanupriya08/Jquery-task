@@ -10,16 +10,26 @@
 		<script src="index.js"></script>
 	</head>
 	<body>	
+		
 		<div class="Container-fluid">
 			<div class="row">
-				<div class="container mrgn">
+				<div class="container ">
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary btn-heading1" data-toggle="modal" data-target="#exampleModal">
-					  Heading-1
+					<button type="button" class="btn btn-primary btn-heading1" data-toggle="modal" data-target="#h1Modal">
+						<h3>Heading-1</h3>
 					</button>
 
+					<button type="button" class="btn btn-primary btn-heading2" data-toggle="modal" data-target="#h2Modal">
+						<h3>Sub-Heading</h3>
+					</button>
+
+					<button type="button" class="btn btn-primary formButton" data-toggle="modal" data-target="#h3Modal">
+						<h3>Form</h3>
+					</button>
+					
+
 					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="h1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden	="true">
 					  <div class="modal-dialog" role="document">
 					    <div class="modal-content">
 					      <div class="modal-header">
@@ -28,27 +38,135 @@
 					          <span aria-hidden="true">&times;</span>
 					        </button>
 					      </div>
-					      <div class="modal-body">
-					        <div style="padding: 20px">
-					        	<input type="input" name="Heading-1" id='input1' class="form-control" placeholder="Enter heading-1">
-					        </div>
-					      </div>
-					      <div class="modal-footer">
-					      		<button type="button" class="btn btn-primary " id="headingsub1">Submit</button>
-					      </div>
+					      <form class="form1">
+						      <div class="modal-body">
+						        <div style="padding: 20px">
+						        	<input type="input" name="Heading-1" id='input1' class="form-control" placeholder="Enter heading-1">
+						        </div>
+						      </div>
+						      <div class="modal-footer">
+						      		<button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close" id="headingsub1">Submit</button>
+						      </div>
+					  	 </form>
 					    </div>
 					  </div>
 					</div>
+
+
+					<!--Modal 2-->
+					<div class="modal fade" id="h2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+					    		<div class="modal-header">
+					    			<h3 class="modal-title" id="exampleModalLabel">Sub-Heading</h3>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+					      		</div>
+					      		<form class="form2">
+									<div class="modal-body ">
+										<div class="form-group " >
+											<label for="inputState">Select Heading-1</label>
+											<select id="inputState" class="form-control sub-heading1 headDropdown1" id='headingData1'>
+												<option selected>Heading-1</option>
+											</select>	
+										    
+										</div>
 									
+
+									
+										<div class="form-group  sub-heading1">
+											<input type="input" name="Heading-1" id='input2' class="form-control sub-heading1" placeholder="Enter Sub Heading">
+										</div>
+									</div>
+								
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-primary headingsub2" data-dismiss="modal" aria-label="Close" >Submit</button>
+									</div>
+								</form>
+					    	</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="h3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-scrollable" role="document">
+							<div class="modal-content">
+					    		<div class="modal-header">
+					    			<h3 class="modal-title" id="exampleModalScrollableTitle">Form</h3>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+					      		</div>
+					      		<form class="form3">
+									<div class="modal-body">
+										<div class="form-group " >
+											
+											<select id="inputState" class="form-control sub-heading1 headDropdown1 target " id='formData1'>
+												<option selected>Heading-1</option>
+											</select>	
+										    
+										</div>
+										<div class="form-group " >
+											
+											<select id="inputState" class="form-control sub-heading1 headDropdown2" id='formData2'>
+												<option selected>Sub-heading</option>
+											</select>	
+										    
+										</div>
+										<div class="form-group">
+											Input Type:
+											<select id="inputState" class="form-control sub-heading1 headDropdown3" id='inputType'>
+												<option selected>text</option>
+												<option>number</option>
+												<option>checkbox</option>
+												<option>textarea</option>
+												<option>email</option>
+												<option>radio</option>
+												<option>select</option>
+												<option>file</option>
+												<option>button</option>
+											</select>
+										</div>
+										
+										<div class="form-group">
+											<input type="input" name="Heading-1" id='name' class="form-control name" placeholder="Name">
+										</div>
+										<div class="form-group">
+											<input type="input" name="Heading-1" id='placeholder' class="form-control placeholder" placeholder="Placeholder">
+										</div>
+										<div class="form-group">
+											<input type="input" name="Heading-1" id='cls' class="form-control cls" placeholder="class">
+										</div>
+										<div class="form-group">
+											<input type="input" name="Heading-1" id='value' class="form-control value" placeholder="value">
+										</div>
+										<div class="form-group">
+											<input type="input" name="Heading-1" id='option' class="form-control optionData" placeholder="Option">
+										</div>
+										<div class="form-group" >
+											<input type="input" name="Heading-1" id='label' class="form-control label1" placeholder="label">
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="submit" class="btn btn-primary " data-dismiss="modal" aria-label="Close" id="submitForm">Submit</button>
+									</div>
+								</form>
+					    	</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="container">
-					<div class="headingData"></div>
+					<main>
+						
+					</main>
 				</div>
-				
 			</div>
 		</div>
+
+
+
 	</body>
 
 

@@ -1,29 +1,58 @@
+
+
 $(document).ready(function(){
+	
+	
 
-	let itemsArray = []
 
-	$('.form1').keypress((e)=>{
-		if (e.which==13){
-			$('#headingsub1').trigger('submit');
-		}
-	})
-	$('.form2').keypress((e)=>{
-		if (e.which==13){
-			$('.headingsub2').trigger('submit');
-		}
-	})
-	$('.form3').keypress((e)=>{
-		if (e.which==13){
-			$('#submitForm').trigger('submit');
-		}
-	})
-	// heading first button
-	$('.form1').submit(function(){
+	// $('.form1').addEventListener('keyup',function(event){
+	// 	if (event.keycode==13){
+	// 		event.preventDefault();
+	// 		$('#headingsub1').trigger('submit');
+	// 	}
+	// })
+
+	// $('.form1').keypress((e)=>{
+	// 	if (e.which==13){
+	// 		e.preventDefault();
+	// 		$('#headingsub1').trigger('click');
+	// 	}
+	// })
+	// $('.form2').keypress((e)=>{
+	// 	if (e.which==13){
+	// 		$('.headingsub2').trigger('click');
+	// 	}
+	// })
+	// $('.form3').keypress((e)=>{
+	// 	if (e.which==13){
+	// 		$('.formSubmit').trigger('click');
+	// 	}
+	// })
+	let result = []
+	
+
+	//console.log(result[0].heading[0])
+
+	$('#headingsub1').click(function(){
+		
+		$('.headDropdown1').find('option:not(:first)').remove();
+
 		var heading = $('#input1').val();
 		var dataHtml = "<section><h1>"+heading+" </h1></section>"
+		result.push({'heading':[heading]})
+		//console.log(result)
+		
+		localStorage.setItem('result',JSON.stringify(result))
+		//var data = JSON.parse(localStorage.getItem('result'))
+		//console.log(data)
+		//result[0].heading =[]
+		//console.log(result)
+		
+		
 		$('main').append(dataHtml)
 		
 		var i = 0
+
 		$('main h1').each(function(){
 			var data = $(this).text()
 			i=i+1
@@ -31,16 +60,26 @@ $(document).ready(function(){
 			$('.headDropdown1').append(dataHtml)
 		})
 		$('.form1').trigger('reset')
-	})
+
+	});
 
 // submit sub-heading button
-	$('.headingsub2').submit(function(){
+
+	$('.headingsub2').click(function(){
+
 		var data = parseInt($('.headDropdown1 option:selected').attr('value'))
 		var data2 = $('#input2').val()
 		var dataHtml = "<div><h2>"+data2+"</h2></div>"
+		result[data-1].heading.push({'subHeading':[data2]})
+		console.log(result)
+		//result[0].heading[].push({'subHeading':data2})
+		localStorage.setItem('result',JSON.stringify(result))
+		//console.log(result)
+		//result[0].heading[data].push({'subHeading':data2})
+		//console.log(result)
 		$("main section:nth-child("+data+") ").append(dataHtml)
 		$('.form2').trigger('reset')
-	})
+	});
 
 	$('.target').change(function(){
 		$('.headDropdown2').find('option:not(:first)').remove();
@@ -55,14 +94,14 @@ $(document).ready(function(){
 			$('.headDropdown2').append(dataHtml)
 		})
 
-	})
+	});
 
-	$('#submitForm').submit(function(){
+	$('.formSubmit').click(function(){
 
 		var data = parseInt($('.target option:selected').attr('value'))
 		//console.log('data='+data)
 		var dataH2 = parseInt($('.headDropdown2 option:selected').attr('value'))
-		//console.log("datah2="+dataH2)
+		console.log("datah2="+dataH2)
 		var num = dataH2+1
 
 		var heading1 = $('.headDropdown1').val()
@@ -85,6 +124,8 @@ $(document).ready(function(){
 					
 			})
 			dataHtml += "</select>"
+			result[data-1].heading[dataH2].subHeading.push(dataHtml)
+			console.log(result)
 			$("main section:nth-child("+data+") div:nth-child("+num+")").append(dataHtml)
 			dataHtml=""
 		}
@@ -121,6 +162,7 @@ $(document).ready(function(){
 			$("main section:nth-child("+data+") div:nth-child("+num+")").append(dataHtml)
 		}
 		$('.form3').trigger('reset')
-	})
+	});
 
  });
+
